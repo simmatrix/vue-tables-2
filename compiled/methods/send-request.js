@@ -11,7 +11,7 @@ module.exports = function (data) {
   }.bind(this));
 
   if (typeof this.$http !== 'undefined') return this.$http.get(this.url, { params: data }).then(function (data) {
-    return data.json();
+    return data.data;
   }.bind(this), function (e) {
     this.dispatch('error', e);
   }.bind(this));
